@@ -1,0 +1,50 @@
+Theory:
+
+multimodal-rag-project/
+│
+├── src/
+│   ├── main.py                     # Main entry-point for the application
+│   ├── file_handlers/
+│   │   ├── text_handler.py         # Process text files (pdf, docx, pptx, md, txt)
+│   │   ├── image_handler.py        # Process images (png, jpg)
+│   │   ├── audio_video_handler.py  # Process audio/video (mp3, mp4, YouTube)
+│   ├── rag/
+│   │   ├── retriever.py            # Retrieval logic
+│   │   ├── generator.py            # Generation logic with LLM
+│   ├── database/
+│   │   └── db_client.py            # Database interface (vector/relational)
+│   └── utils/
+│       ├── helpers.py              # Utility functions
+│       └── config.py               # Configuration file
+│
+├── ui/                             # Optional: UI code for Streamlit/HTML/CLI
+│   └── app.py
+│
+├── samples/                        # Sample input files for testing
+│   ├── sample.pdf
+│   ├── sample.jpg
+│   └── sample.mp3
+│
+├── tests/                          # Unit and integration tests
+│   └── test_main.py
+│
+├── requirements.txt                # Python dependencies
+├── README.md                       # Project documentation and instructions
+├── .gitignore                      # Ignore unnecessary files
+├── setup.sh / install.bat          # Optional: Setup/install script
+└── LICENSE                         # License (if required by organization)
+
+Folder & File Purposes
+--src/: All primary source code for processing, retrieval, and generation steps.
+   --file_handlers/: Specialized scripts for extracting and processing data from each type of input.
+   --rag/: Core RAG logic: retrieval from database and LLM-based answer generation.
+   --database/: Scripts to connect and interact with the database or vector store.
+   --utils/: Helper scripts, configurations, and common functions.
+--ui/: (Optional) Scripts for your user interface (web, CLI, or app).
+--samples/: Example files for demonstration and testing.
+--tests/: Tests for verifying correct functionality.
+--requirements.txt: All dependencies required for setup.
+--README.md: Instructions, architecture, usage, and setup guide.
+--.gitignore: Ensures temp, data, and secret files are not uploaded.
+--setup.sh / install.bat: Installation or startup automation if needed.
+--LICENSE: Compliance with open-source requirements.

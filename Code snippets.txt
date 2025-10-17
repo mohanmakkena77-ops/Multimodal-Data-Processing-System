@@ -1,0 +1,29 @@
+Code snippets:
+
+main.py
+from file_handlers.text_handler import extract_text
+from file_handlers.image_handler import extract_image_text
+from llm.gemini_client import ask_gemini
+
+def process_query(user_query, input_file, input_type):
+    if input_type == 'text':
+        content = extract_text(input_file)
+    elif input_type == 'image':
+        content = extract_image_text(input_file)
+    # Other input types...
+    answer = ask_gemini(user_query, content)
+    return answer
+
+file_handlers/text_handler.py
+def extract_text(file_path):
+    # Sample for .txt; extend for .pdf, .docx, etc.
+    with open(file_path, 'r', encoding='utf-8') as f:
+        return f.read()
+
+llm/gemini_client.py
+def ask_gemini(question, context):
+    # Call Gemini Free API (pseudo-code)
+    response = gemini_api.ask(prompt=f"{context}
+
+Question:{question}")
+    return response
